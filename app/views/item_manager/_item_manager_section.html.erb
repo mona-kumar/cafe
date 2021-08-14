@@ -1,35 +1,22 @@
 <section class="TodoSection">
 <div class="TodoSectionTitle">
-  <p> <%= name %></p>
-  <p> <% menu_items %></p>
+ <p>Menu Categories</p>
 </div>
 <ul>
-<% menu_items.each do |menu_item|%>
-    <p>helo</p>
+<% menu_categories.each do |menu_cat|%>
+   
   <li class="TodoItem">
     <div class="TodoItem-container">
-     
-    
-    
-
      <p> 
-     helloooo
-      <%= menu_item.name%>
-      <%= menu_item.desription%>
-      <%= menu_item.price%>
-      <%= menu_item.id%>
+      <%= menu_cat.name%>
      </p>
-      
-    
-      
-      
-
-    
-     
-      
+     <button> ADD</button>
     </div>
   </li>
   <%end%>
   </ul>
+ 
+   
+
 
 </section>

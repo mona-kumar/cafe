@@ -1,19 +1,9 @@
 <main class="TodoPageMain">
       <article>
         <h1 class="TodoPage-title">Menu Items List Manager</h1>
-        <%= form_with(url: "/item_manager", method:"post",class:"AddTodo") do %>
+       
 
-          <input class="AddTodo-text" type="text" placeholder="Enterr menu category id" name="category_id">
-        
-          <input class="AddTodo-date" type="text"  placeholder="Enter Menu item name" name="item_name">
-          <input class="AddTodo-date" type="text"  placeholder="Enter Description" name="description">
-          <input class="AddTodo-date" type="text"  placeholder="Enter price" name="price">
-
-
-          <input  class="AddTodo-button" type="submit" value="Add" >
-        <% end %> 
-
-        <%= render partial:"item_manager_section",locals:{name:"breakfast", menu_items:MenuItems.breakfast}%>  
+        <%= render partial:"item_manager_section",locals:{menu_categories:MenuCategory.all}%>  
 
 
       </article>
