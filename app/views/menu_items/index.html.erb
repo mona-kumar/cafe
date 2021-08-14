@@ -1,0 +1,22 @@
+
+
+
+<main class="TodoPageMain">
+<article>
+  <h1 class="TodoPage-title">Menu List</h1>
+  <%= form_with(url: "/menu_items", method:"post") do %>
+
+    <input class="AddTodo-text" type="text" placeholder="Enter name of item" name="item_name">
+    <input class="AddTodo-text" type="text" placeholder="Description" name="item_description">
+    <input class="AddTodo-text" type="text" placeholder="Enter price" name="item_price">
+
+    <input  class="AddTodo-button" type="submit" value="Add" >
+  <% end %>
+  <p> 
+  <%= render partial:"menu_items_section",locals:{section_title:@menu_items.name, menu_items:@menu_items}%> 
+  </p>
+   
+
+</article>
+</div>
+</main>

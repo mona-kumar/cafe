@@ -10,7 +10,9 @@
      <p> 
       <%= menu_cat.name%>
      </p>
-     <button> ADD</button>
+     <%= form_with(url: "/menu_items/#{menu_cat.id}", method:"put") do %>
+      <button> ADD </button>
+    <% end %>
     </div>
   </li>
   <%end%>
