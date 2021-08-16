@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get "/",to:"home#index"
-  get "/signin", to:"sessions#new",as: :sessions
+  get "/signin", to:"sessions#new",as: :new_sessions
+  post "/signin", to:"sessions#create", as: :sessions
   resources:menu_items
   resources:users
   resources:item_manager

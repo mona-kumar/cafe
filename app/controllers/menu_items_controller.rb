@@ -18,7 +18,7 @@ class MenuItemsController<ApplicationController
         description:description,
         price:price
         )
-        response_text="Hey, your new todo is created with the id #{new_todo.id}"
+        response_text="Hey, your new item is created with the id #{new_item.id}"
         render plain:response_text
         
    end
