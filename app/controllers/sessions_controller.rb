@@ -7,7 +7,12 @@ class SessionsController < ApplicationController
         user=User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
             session[:current_user_id]=user.id
-            redirect_to "/"
+            if user.role=="Customer"
+                redirect_to "/"
+            else
+                redirect_to item_manager_index_path
+            end
+            
         else
             render plain:"Incorect creds!"
         end
