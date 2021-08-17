@@ -1,0 +1,16 @@
+<main class="TodoPageMain">
+      <article>
+        <h1 class="TodoPage-title">Here is your delicious menu! :)</h1>
+       
+
+        <%= render partial:"customer_menu_items_section",locals:{section_title:"Breakfast",customer_items_menu:MenuItems.breakfast}%>  
+        <%= render partial:"customer_menu_items_section",locals:{section_title:"Lunch",customer_items_menu:MenuItems.lunch}%>  
+        <%= render partial:"customer_menu_items_section",locals:{section_title:"Dinner",customer_items_menu:MenuItems.dinner}%>  
+        <%= render partial:"customer_menu_items_section",locals:{section_title:"Drinks",customer_items_menu:MenuItems.drinks}%>  
+        <%= render partial:"customer_menu_items_section",locals:{section_title:"Desserts",customer_items_menu:MenuItems.desserts}%>  
+
+
+
+      </article>
+    </div>
+    </main>

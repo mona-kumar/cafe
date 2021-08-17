@@ -1,0 +1,29 @@
+<section class="TodoSection">
+<div class="TodoSectionTitle">
+
+ <h3><%=section_title%></h3>
+</div>
+<ul>
+<% customer_items_menu.each do |menu_item|%>
+   
+  <li class="TodoItem">
+    <div class="TodoItem-container">
+     <p> 
+      <%= menu_item.name%>
+      <%= menu_item.price%>
+      <input class="AddTodo-text" type="text" placeholder="Enter quantity" name="quantity">
+     
+      <button> ADD T0 CART</button>
+     </p>
+     
+     
+   
+    </div>
+  </li>
+  <%end%>
+  </ul>
+ 
+   
+
+
+</section>

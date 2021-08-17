@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources:menu_items
   resources:users
   resources:item_manager
+  resources:customer_menu_items
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
