@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+   
     def new 
        render "users/new"
     end
@@ -11,6 +12,12 @@ class UsersController < ApplicationController
             email:params[:email],
             password:params[:password]
         )
+        redirect_to "/"
+    end
+
+    def destroy
+        session[:current_user_id]=nil
+        @current_user=nil
         redirect_to "/"
     end
 end
