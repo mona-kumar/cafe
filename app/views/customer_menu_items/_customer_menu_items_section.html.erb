@@ -10,19 +10,23 @@
   <li class="TodoItem">
     <div class="TodoItem-container">
     
-     <p> 
-      <%= menu_item.name%>
-      <%= menu_item.price%>
-    
-      <span class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value"></span>
-       <input type="number" id="number" value="0" />
-       <span class="value-button" id="increase" onclick="increaseValue()" value="Increase Value"></span>
-      <button> ADD T0 CART</button>
-     </p>
+      <p> <%= menu_item.name%>
+       <%= menu_item.price%>
+      
      
      
-   
-    </div>
+
+       <%= form_tag customer_menu_items_path do %>
+        <span class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value"></span>
+        <input type="number" id="number" value="0"  name="quantity"/>
+        <span class="value-button" id="increase" onclick="increaseValue()" value="Increase Value"></span>
+
+        <%= hidden_field_tag "id", menu_item.id %>
+        <%= submit_tag "Submit" %>
+      <% end %>
+
+      
+      </p>
   </li>
   <%end%>
   </ul>

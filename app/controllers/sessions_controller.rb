@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
 
 
     def destroy
+        OrderItems.delete_all
         session[:current_user_id]=nil
         @current_user=nil
         redirect_to "/"

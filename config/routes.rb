@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources:users
   resources:item_manager
   resources:customer_menu_items
+  resources:order_items
+  resources:cart
   
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

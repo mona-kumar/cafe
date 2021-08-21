@@ -1,0 +1,35 @@
+<section class="TodoSection">
+<div class="TodoSectionTitle">
+ <p>Your order list:</p>
+</div>
+<ul>
+<h3> Item ID Name Description Price Quantity </h3>
+<% total=0 %>
+<% cart_items.each do |cart_item|%>
+   
+  <li class="TodoItem">
+    <div class="TodoItem-container">
+     <p> 
+     <%= cart_item.menu_item_id %>
+     <%= MenuItems.find(cart_item.menu_item_id).name %>
+     <%= MenuItems.find(cart_item.menu_item_id).description %>
+     <%= MenuItems.find(cart_item.menu_item_id).price %>
+      <%= cart_item.quantity %>
+      <%= form_with(url: "/customer_menu_items/#{cart_item.id}", method:"delete") do %>
+      <button> <i class="fa fa-trash"></i></button>
+      <% end %>
+
+     </p>
+     
+    </div>
+  </li>
+
+  <% total=total+ cart_item.quantity * MenuItems.find(cart_item.menu_item_id).price %>
+  <%end%>
+  </ul>
+  <p> Your total is : <%= total %></p>
+ 
+   
+
+
+</section>
