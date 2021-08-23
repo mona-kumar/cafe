@@ -2,33 +2,33 @@
 <html>
   <head>
     <title>Cafe</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <%= csrf_meta_tags %> <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all',
+    'data-turbolinks-track': 'reload' %> <%= javascript_pack_tag 'application',
+    'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <% if @current_user%>
-   <span class="UserHeader">
-      Welcome <%=  @current_user.first_name %>! :)
+    <% if @current_user%>
+    <span class="UserHeader">
+      Welcome <%= @current_user.first_name %>! :)
       <span class="sign_out">
         <%= link_to "Sign out", destroy_sessions_path, method:"delete" %>
       </span>
-   </span>
-   
-   <% end %>
-  <hr>
-    <% flash.each do |name,msg| %>
-       <div class='alert-alert-<%= name %>'>
-         <%= msg %> 
-       </div>
+    </span>
+
     <% end %>
-    <%= yield %>
-  <hr>
+    <hr />
+    <% flash.each do |name,msg| %>
+    <div class="alert-alert-<%= name %>"><%= msg %></div>
+    <% end %> <%= yield %>
+    <hr />
   </body>
 </html>

@@ -1,15 +1,15 @@
-<p class="NewUsers-title"> SignIn</p>
+<p class="NewUsers-title"> Login form</p>
 
 <section class="UsersNew">
   <%= form_with url: sessions_path do |form| %>
     <div class="Form-section">
        <p class="FormInput-label"> email: </p>
-       <%= form.email_field :email, class:"Form-input" %>
+       <%= form.email_field :email, class:"Form-input",placeholder:"Enter your email"%>
     </div>
 
     <div class="Form-section">
        <p class="FormInput-label"> Password: </p>
-       <%= form.password_field :password, class:"Form-input"%>
+       <%= form.password_field :password, class:"Form-input", placeholder:"Enter your password"%>
      </div>
 
      <div class="Form-section">

@@ -1,14 +1,17 @@
 class CustomerMenuItemsController < ApplicationController
 
    before_action:ensure_user_logged_in
-def create  
-    
+def create
+
+    customer_user_id=session[:current_user_id]
    
     menu_item_id=params[:id] 
     
     quantity=params[:quantity]
   
-    order_item=OrderItems.create!(menu_item_id:menu_item_id,
+    order_item=OrderItems.create!(current_user_id:customer_user_id,
+    
+    menu_item_id:menu_item_id,
 
     quantity:quantity,
     

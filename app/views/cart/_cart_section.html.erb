@@ -35,7 +35,10 @@
   
   <p class="total_price"> Your total is : Rs. <%= total %></p>
 
-  <button class="order_status" onclick="orderStatus()">PLACE ORDER</button>
+  
+
+ <%= link_to "place order", orders_path %>
+
   <p id="demo"></p>
   <script>
    function orderStatus() {

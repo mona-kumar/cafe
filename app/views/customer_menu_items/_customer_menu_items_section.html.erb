@@ -21,8 +21,10 @@
        <td><%= menu_item.name %></td>
        <td><%= menu_item.description %></td>
        <td><%= menu_item.price %></td>
+      
 
        <%= form_tag customer_menu_items_path do %>
+      
         <td><span class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value"></span>
         <input type="number" id="number" value="0"  name="quantity"/>
         <span class="value-button" id="increase" onclick="increaseValue()" value="Increase Value"></span></td>

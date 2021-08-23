@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
 
         elsif user && user.authenticate(params[:password])
             session[:current_user_id]=user.id
+            @user_id=session[:current_user_id]
             if user.role=="Customer"
                 redirect_to customer_menu_items_path
             else
@@ -24,7 +25,7 @@ class SessionsController < ApplicationController
 
 
     def destroy
-        OrderItems.delete_all
+       
         session[:current_user_id]=nil
         @current_user=nil
         redirect_to "/"
