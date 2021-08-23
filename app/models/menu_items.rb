@@ -1,4 +1,5 @@
 class MenuItems <ApplicationRecord
+
    has_many :menu_items
    def self.breakfast
       all.where("menu_category_id = ?","1")
@@ -15,4 +16,5 @@ class MenuItems <ApplicationRecord
    def self.desserts
       all.where("menu_category_id = ?","5")
    end
+   
 end

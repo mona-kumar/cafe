@@ -14,12 +14,20 @@
 
   <body>
   <% if @current_user%>
-   <p class="UserHeader">
+   <span class="UserHeader">
       Welcome <%=  @current_user.first_name %>! :)
-      <%= link_to "Sign out", destroy_sessions_path, method:"delete" %>
-   </p>
+      <span class="sign_out">
+        <%= link_to "Sign out", destroy_sessions_path, method:"delete" %>
+      </span>
+   </span>
+   
    <% end %>
   <hr>
+    <% flash.each do |name,msg| %>
+       <div class='alert-alert-<%= name %>'>
+         <%= msg %> 
+       </div>
+    <% end %>
     <%= yield %>
   <hr>
   </body>

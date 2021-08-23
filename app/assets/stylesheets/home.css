@@ -1,15 +1,7 @@
-.Home-Title{
-    font-size:20px;
-    margin-bottom: 30px;
- }
- .Home-authenticate{
-    font-size: 20px;
-    margin-bottom: 16px;
- }
- .UserHeader{
-    font-size: 20px;
-    background-color: lightblue;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
- }
+.UserHeader {
+  font-weight: bolder;
+  font-size: 30px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}

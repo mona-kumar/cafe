@@ -1,6 +1,8 @@
 class CustomerMenuItemsController < ApplicationController
-    skip_before_action:ensure_user_logged_in
+
+   before_action:ensure_user_logged_in
 def create  
+    
    
     menu_item_id=params[:id] 
     
@@ -11,8 +13,7 @@ def create
     quantity:quantity,
     
     )
-    response_text="Hey, your item successfully added to cart #{order_item.id}"
-    render plain:response_text
+    redirect_to customer_menu_items_path, success: "Item added successfully to cart!"
     
 end
 

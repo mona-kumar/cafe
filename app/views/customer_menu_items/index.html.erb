@@ -1,8 +1,13 @@
 <main class="TodoPageMain">
       <article>
+    
+      <%= link_to cart_index_path do %>
+      <i style="font-size:54px" class="fa fa-shopping-cart" id="cart_icon" ></i>
+      <% end %>
       
-      <%= link_to "View cart", cart_index_path %>
-        <h1 class="TodoPage-title">Here is your delicious menu! :)</h1>
+     
+      
+        <h1 class="customer_menu_items_title">Here is the delicious menu! :)</h1>
        
 
         <%= render partial:"customer_menu_items_section",locals:{section_title:"BREAKFAST",customer_items_menu:MenuItems.breakfast}%>  

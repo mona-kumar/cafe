@@ -6,7 +6,10 @@ class SessionsController < ApplicationController
 
     def create
         user=User.find_by(email: params[:email])
-        if user && user.authenticate(params[:password])
+        if User.find_by(email: params[:email]) == nil 
+            redirect_to new_sessions_path, danger: "Please enter ethe details!"
+
+        elsif user && user.authenticate(params[:password])
             session[:current_user_id]=user.id
             if user.role=="Customer"
                 redirect_to customer_menu_items_path
@@ -15,7 +18,7 @@ class SessionsController < ApplicationController
             end
             
         else
-            render plain:"Incorect creds!"
+            redirect_to new_sessions_path, danger: "Invalid username or password.Try again!"
         end
     end
 
