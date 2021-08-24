@@ -1,13 +1,10 @@
 <section class="TodoSection">
-<div class="TodoSectionTitle">
-<p> <%= menu_cats.id%></p>
-  <p> <%= menu_cats.name %></p>
-</div>
-<ul>
-
-<%= MenuItems.all.where(menu_category_id: menu_cats.id).each do |item| %>
-
-<% end %>
-</ul>
-
+  <div class="TodoSectionTitle">
+    <p><%= menu_cats.id%></p>
+    <p><%= menu_cats.name %></p>
+  </div>
+  <ul>
+    <%= MenuItems.all.where(menu_category_id: menu_cats.id).each do |item| %> 
+    <% end %>
+  </ul>
 </section>

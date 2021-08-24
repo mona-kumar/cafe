@@ -1,23 +1,17 @@
 <main class="TodoPageMain">
-      <article>
+    <article>
     
       <%= link_to cart_index_path do %>
       <i style="font-size:54px" class="fa fa-shopping-cart" id="cart_icon" ></i>
       <% end %>
       
-     
-      
-        <h1 class="customer_menu_items_title">Here is the delicious menu! :)</h1>
+      <h1 class="customer_menu_items_title">Here is the delicious menu! :)</h1>
        
-
-        <%= render partial:"customer_menu_items_section",locals:{section_title:"BREAKFAST",customer_items_menu:MenuItems.breakfast}%>  
-        <%= render partial:"customer_menu_items_section",locals:{section_title:"LUNCH",customer_items_menu:MenuItems.lunch}%>  
-        <%= render partial:"customer_menu_items_section",locals:{section_title:"DINNER",customer_items_menu:MenuItems.dinner}%>  
-        <%= render partial:"customer_menu_items_section",locals:{section_title:"DRINKS",customer_items_menu:MenuItems.drinks}%>  
-        <%= render partial:"customer_menu_items_section",locals:{section_title:"DESSERTS",customer_items_menu:MenuItems.desserts}%>  
-
-
+       <%= render partial:"customer_menu_items_section",locals:{section_title:"BREAKFAST",customer_items_menu:MenuItems.breakfast}%>  
+       <%= render partial:"customer_menu_items_section",locals:{section_title:"LUNCH",customer_items_menu:MenuItems.lunch}%>  
+       <%= render partial:"customer_menu_items_section",locals:{section_title:"DINNER",customer_items_menu:MenuItems.dinner}%>  
+       <%= render partial:"customer_menu_items_section",locals:{section_title:"DRINKS",customer_items_menu:MenuItems.drinks}%>  
+       <%= render partial:"customer_menu_items_section",locals:{section_title:"DESSERTS",customer_items_menu:MenuItems.desserts}%>  
 
       </article>
-    </div>
-    </main>
+ </main>

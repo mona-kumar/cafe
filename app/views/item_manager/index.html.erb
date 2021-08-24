@@ -1,11 +1,11 @@
 <main class="TodoPageMain">
       <article>
+
+      <%= link_to "View orders", employee_orders_path %>
         <h1 class="TodoPage-title">Menu Items List Manager</h1>
        
-
         <%= render partial:"item_manager_section",locals:{menu_categories:MenuCategory.all}%>  
 
-
       </article>
-    </div>
-    </main>
+      
+  </main>

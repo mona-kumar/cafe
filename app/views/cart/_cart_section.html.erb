@@ -1,59 +1,50 @@
 <section class="TodoSection">
+  <table id="cart_items">
 
-    
+    <% total=0 %>
 
+    <tbody>
 
-<table id="cart_items">
+      <% cart_items.each do |cart_item| %>
 
-  
-<% total=0 %>
+      <tr>
+        <td><%= MenuItems.find(cart_item.menu_item_id).name %></td>
+        <td><%= MenuItems.find(cart_item.menu_item_id).description %></td>
+        <td>Rs.<%= MenuItems.find(cart_item.menu_item_id).price %></td>
+        <td>Quantity : <%= cart_item.quantity %></td>
+        <td>
+          <%= form_with(url: "/customer_menu_items/#{cart_item.id}",
+          method:"delete") do %>
+          <button><i id="delete_cart_item_btn" class="fa fa-trash"></i></button>
+          <% end %>
+        </td>
+      </tr>
 
-<tbody> 
-<% cart_items.each do |cart_item| %>
+      <% total = total + cart_item.quantity * MenuItems.find(cart_item.menu_item_id).price %> 
+      <%end%>
 
-  <tr>
-   
-     
-    
-     <td><%= MenuItems.find(cart_item.menu_item_id).name %></td>
-     <td><%= MenuItems.find(cart_item.menu_item_id).description %></td>
-     <td>Rs.<%= MenuItems.find(cart_item.menu_item_id).price %></td>
-      <td>Quantity : <%= cart_item.quantity %></td>
-      <td ><%= form_with(url: "/customer_menu_items/#{cart_item.id}", method:"delete") do %>
-      <button> <i id="delete_cart_item_btn" class="fa fa-trash"></i></button>
-      <% end %></td>
+    </tbody>
 
-     
-
-  </tr>
- 
-  <% total = total + cart_item.quantity * MenuItems.find(cart_item.menu_item_id).price %>
-  <%end%>
-  </tbody>
   </table>
- 
-  
-  <p class="total_price"> Your total is : Rs. <%= total %></p>
 
-  
+  <p class="total_price">Your total is : Rs. <%= total %></p>
 
- <%= link_to "place order", orders_path %>
+  <button onclick="orderStatus()"> place order </button>
+
 
   <p id="demo"></p>
+
   <script>
-   function orderStatus() {
-     var tot = "<%= total %>"
-    var t = "<%= total %>"
-    console.log(t)
-    if ( t > 0) {
-      document.getElementById("demo").innerHTML = "Order successfully placed!!";
+    function orderStatus() {
+      var tot = "<%= total %>";
+      var t = "<%= total %>";
+      console.log(t);
+      if (t > 0) {
+        window.location.replace(" <%= orders_path %>")
+      } else {
+        document.getElementById("demo").innerHTML = "Order something ya!!";
+      }
     }
-    else {
-      document.getElementById("demo").innerHTML = "Order something ya!!";
-    }
-   }
   </script>
 
-
-
-</section> 
+</section>

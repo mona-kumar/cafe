@@ -1,0 +1,17 @@
+<section class="TodoSection">
+  <ul>
+    <% view_all_orders.each do |order|%>
+
+    <li class="TodoItem">
+      <div class="TodoItem-container">
+        <p>
+          Customer Id:<%= order.current_user_id %> 
+          Menu Item Id:<%= order.menu_item_id %> 
+          Name:<%= MenuItems.find(order.menu_item_id).name %> 
+          Quantity:<%= order.quantity %>
+        </p>
+      </div>
+    </li>
+    <%end%>
+  </ul>
+</section>

@@ -1,9 +1,12 @@
 <div class="TodoSection">
-<div class="TodoSectionTitle">
-   <h3><%=section_title%></h3>
-</div>
-<table id="menu_items">
-<thead>
+
+  <div class="TodoSectionTitle">
+     <h3><%=section_title%></h3>
+  </div>
+
+  <table id="menu_items">
+
+  <thead>
   <tr>
     <th>Name</th>
     <th>Description</th>
@@ -12,6 +15,7 @@
     <th></th>
   </tr>
   </thead>
+
   <tbody>
 
    <% customer_items_menu.each do |menu_item|%>
@@ -34,7 +38,9 @@
        <% end %>
     </tr>
   
-<%end%>
-</tbody>
-</table>
-</div>
+  <%end%>
+
+  </tbody>
+  
+  </table>
+  </div>
